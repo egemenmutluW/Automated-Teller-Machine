@@ -17,6 +17,7 @@ public class Manager {
             c.setBalance(balance);
             System.out.println(c.getBalance());
         }
+        CustomerManager.updateUser(c);
         return c;
     }
 
@@ -28,6 +29,7 @@ public class Manager {
         balance += amount;
         c.setBalance(balance);
         System.out.println(balance);
+        CustomerManager.updateUser(c);
         return c;
     }
 

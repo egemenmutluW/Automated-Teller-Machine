@@ -32,4 +32,15 @@ public class CustomerManager {
         }
         return user;
     }
+
+    public static void updateUser(Customer c){
+        for (Customer user :data.customerList) {
+            if (user.getName().equals(c.getName()) && user.getSurName().equals(c.getSurName()) ){
+                user.setName(c.getName());
+                user.setSurName(c.getSurName());
+                user.setBalance(c.getBalance());
+            }
+        }
+    }
+
 }
