@@ -17,11 +17,17 @@ public class Main {
             Gui gui = new Gui();
             Manager manager = new Manager();
             String choiceMenu;
+            int loginControlCount = 0;
 
             choiceMenu = gui.loginMenu();
             if (choiceMenu.equals("1")){
                 boolean control = false;
                 do {
+                    if (loginControlCount <= 3 && loginControlCount >= 1 ){
+                        System.out.println("Incorrect number of entries " + loginControlCount);
+                    } else if (loginControlCount == 4) {
+                        c1 = gui.register();
+                    }
                     List<String> user = new ArrayList<String>();
                     String name;
                     String surname;
@@ -40,7 +46,12 @@ public class Main {
                     } else {
                         user.clear();
                         System.out.println("wrong name or surname");
-                        Main.main(null);
+                        loginControlCount++;
+                        gui.exit();
+                        e = r.nextLine();
+                        if (e.equals("e")){
+                            System.exit(0);
+                        }
                     }
                 }while (control != true);
             } else {

@@ -47,6 +47,7 @@ public class Gui {
     }
 
     public Customer register() {
+        System.out.println("--- Register ---");
         Scanner s = new Scanner(System.in);
         Customer c = new Customer();
 
@@ -61,6 +62,7 @@ public class Gui {
     }
 
     public List<String> login() {
+        System.out.println("--- Login ---");
         Scanner s = new Scanner(System.in);
         String name;
         String surname;
