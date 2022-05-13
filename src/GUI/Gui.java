@@ -55,8 +55,14 @@ public class Gui {
         c.setName(s.nextLine());
         System.out.println("Surname:");
         c.setSurName(s.nextLine());
-        System.out.println("Balance:");
-        c.setBalance(Integer.parseInt(s.nextLine()));
+       try{
+           System.out.println("Balance:");
+           c.setBalance(Integer.parseInt(s.nextLine()));
+       }catch (Exception e){
+           System.out.println("wrong login please check balance");
+           System.out.println("Balance:");
+           c.setBalance(Integer.parseInt(s.nextLine()));
+       }
         data.customerList.add(c);
         return c;
     }
