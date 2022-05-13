@@ -8,14 +8,19 @@ public class Manager {
     private static Customer withdrawMoney(Customer c) {
         Scanner s = new Scanner(System.in);
         System.out.println("amount:");
-        int amount = Integer.parseInt(s.nextLine());
+        int amount = 0;
+        try {
+            amount = Integer.parseInt(s.nextLine());
+        }catch (Exception e){
+            System.out.println("please enter number");
+            withdrawMoney(c);
+        }
         int balance = c.getBalance();
         balance -= amount;
         if (balance < 0) {
             System.out.println("There is not enough money in the account");
         } else {
             c.setBalance(balance);
-            System.out.println(c.getBalance());
         }
         CustomerManager.updateUser(c);
         return c;
