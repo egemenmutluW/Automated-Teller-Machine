@@ -38,6 +38,8 @@ public class Main {
                         user.clear();
                     } else {
                         user.clear();
+                        System.out.println("wrong name or surname");
+                        Main.main(null);
                     }
                 }while (control != true);
             } else {
