@@ -25,6 +25,10 @@ public class Gui {
         System.out.println("[E/n] exit");
     }
 
+    public void backtoMenu(){
+        System.out.println("[E/b] back");
+    }
+
     public String menuStart () {
         greeting();
         return menu();

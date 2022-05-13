@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         String e = "n";
+        String b = "b";
         Scanner r = new Scanner(System.in);
         do{
             Customer c1 = new Customer();
@@ -45,8 +46,12 @@ public class Main {
             } else {
                 c1 = gui.register();
             }
-            choiceMenu = gui.menuStart();
-            c1 = manager.selectionMenu(choiceMenu,c1);
+            do {
+                choiceMenu = gui.menuStart();
+                c1 = manager.selectionMenu(choiceMenu,c1);
+                gui.backtoMenu();
+                b = r.nextLine();
+            }while (b.equals("b"));
             gui.exit();
             e = r.nextLine();
         }while (e.equals("n"));
