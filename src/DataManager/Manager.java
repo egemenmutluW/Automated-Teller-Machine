@@ -24,11 +24,16 @@ public class Manager {
     private static Customer deposit(Customer c) {
         Scanner s = new Scanner(System.in);
         System.out.println("amount:");
-        int amount = Integer.parseInt(s.nextLine());
+        int amount = 0;
+        try {
+            amount = Integer.parseInt(s.nextLine());
+        } catch (Exception e) {
+            System.out.println("please enter number");
+            deposit(c);
+        }
         int balance = c.getBalance();
         balance += amount;
         c.setBalance(balance);
-        System.out.println(balance);
         CustomerManager.updateUser(c);
         return c;
     }
